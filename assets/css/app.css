@@ -1,0 +1,93 @@
+
+/* @import url("./profile.scss") */
+
+body {
+    /* background-color: red; */
+}
+
+.main-artist {
+    height: 200px;
+    width: 200px;
+    background-size:cover;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+.main-artist:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+h2 {
+  color: white;
+}
+
+.d-none::before{
+  animation: 0.5s;
+}
+.d-none::after{
+  animation: 0.5s;
+}
+
+
+.main {
+    /* position: relative; */
+    /* color: black;
+    width: 200px;
+    height: 200px;
+    line-height: 64px;
+    transition: all 0.3s;
+    span {
+      transition: all 0.3s;
+      tranform: scale(1, 1);
+    } */
+}
+/* .main::before, .main::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  } */
+
+
+.main-artist:hover::before, .main-artist:hover::after {
+    /* content: '';
+    position: absolute;
+    width: 40%;
+      height: 40%;
+    top: 0;
+    right: 200; */
+       /* left: 2000; */
+      /* z-index: 1;
+    transition: all 0.3s;
+    border: 1px solid rgba(0,0,255,0.3); */
+}
+/* mIN.main-artist:hover:hover::after {
+    animation-name: rotatecw;
+    animation-duration: 1s;
+  } */
+  /* .main-artist:hover:hover::before {
+    animation-name: rotateccw;
+    animation-duration: 3s;
+  } */
+  .main-artist:hover:hover::after, .main-artist:hover:hover::before {
+    /* left: 96px; */
+    /* width: 200px;
+
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+  }
+
+  /* @keyframes rotatecw {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+  }
+
+  @keyframes rotateccw {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(-360deg);}
+  } */

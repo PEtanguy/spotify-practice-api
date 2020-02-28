@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<div class="ui container">
+  <h1>Profile</h1>
+  <div class="ui cards">
+    <div class="ui raised card">
+      <div class="content">
+        <div class="header">{{ me.display_name }}</div>
+        <div class="meta">
+          <span class="right floated time">
+            <a href="{{ me.external_urls.spotify }}" target="_blank"><i class="linkify icon"></i></a>
+          </span>
+          <span class="category">{{ me.id }}</span>
+        </div>
+        <div class="description">
+          {{ me.product }}
+        </div>
+      </div>
+      <div class="extra content">
+        <i class="check icon"></i>
+        {{ me.followers.total }} Followers
+
+
+      </div>
+    </div>
+  </div>
+
+  <a href="{{ path('logout') }}" class="ui red button right floated"><i class="power icon"></i> Logout</a>
+
+
+  <div class="top-artists">
+  <h1>Hey <strong>{{ me.display_name }}</strong>, here are your Favourite Artists!</h1>
+    <div class="row">
+    {% for artist in top %}
+      <div class="col-sm-2 col-md-4 col-lg-3">
+              <div class="btn btn-two">
+                    <div class="main main-artist " style="background-image: url('{{ artist["images"][0]["url"] }}');">
+                        <h2>{{ artist["name"] }}</h2>
+                    </div>
+                    <div class="d-none">
+                      <h3>Total Followers: <strong>{{artist["followers"]["total"]}}</strong></h3>
+                      <h3>Genres</h3>
+                      {% for genre in artist["genres"] %}
+                          <li>{{genre}}</li>
+                      {% endfor %}
+                    </div>
+              </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
